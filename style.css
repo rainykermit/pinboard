@@ -5,3 +5,17 @@
 @media(max-width:1050px){.layout{grid-template-columns:minmax(220px,.7fr) minmax(390px,1.3fr);}.intro{grid-column:1;grid-row:1}.game-card{grid-column:2;grid-row:1 / span 2}.side-panel{grid-column:1;grid-row:2}.stats{grid-template-columns:1fr;}.intro h1{font-size:43px}}
 @media(max-width:720px){.topbar{height:66px}.top-pill{display:none}.layout{display:flex;flex-direction:column;padding-top:30px;gap:22px}.intro{padding-top:0;width:100%}.intro h1{font-size:45px}.lede{margin:15px 0 20px}.stats{grid-template-columns:repeat(3,1fr);max-width:none}.stat-card{padding:12px 10px;align-items:flex-start;gap:7px;flex-direction:column}.stat-card strong{font-size:20px}.game-card{width:100%;padding:17px}.side-panel{width:100%;display:grid;grid-template-columns:1fr 1fr}.quote-card{grid-column:1/-1}.cork-board{padding:14px}.hint{font-size:7px}footer{padding-bottom:24px}.icon-button{font-size:9px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Active arcade aiming and dart-flight animation */
+.track.moving-track{overflow:hidden;background:linear-gradient(90deg,#111523,#1b2032,#111523);touch-action:manipulation}
+.track.moving-track .track-cursor{width:5px;z-index:2;transition:left .035s linear}
+.track-label{position:absolute;inset:0;display:grid;place-items:center;font:8px 'DM Mono',monospace;letter-spacing:.12em;color:#858aa1;pointer-events:none;z-index:1}
+.track.locked .track-label{color:#ffb4a9}
+.dart{transform:translate(-50%,-50%) rotate(-38deg);transition:none}
+.dart.in-flight{transition:left .62s cubic-bezier(.18,.72,.24,1),top .62s cubic-bezier(.18,.72,.24,1),transform .62s ease;transform:translate(-50%,-50%) rotate(18deg) scale(1.15)}
+.dart.stuck{transform:translate(-50%,-50%) rotate(-38deg) scale(1);animation:dart-wobble .38s ease-out}
+@keyframes dart-wobble{0%{transform:translate(-50%,-50%) rotate(-24deg)}35%{transform:translate(-50%,-50%) rotate(-45deg)}65%{transform:translate(-50%,-50%) rotate(-33deg)}100%{transform:translate(-50%,-50%) rotate(-38deg)}}
+@keyframes lock-flash{0%,100%{box-shadow:0 0 0 0 #d4fa6800}50%{box-shadow:0 0 0 4px #d4fa6833}}
+.track.locked{animation:lock-flash .24s ease-out}
+.throw-button:disabled{cursor:not-allowed;transform:none}
+@media(prefers-reduced-motion:reduce){.dart.in-flight,.dart.stuck,.track.locked{animation:none!important;transition:none!important}}
