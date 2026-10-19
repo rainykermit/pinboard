@@ -1,28 +1,30 @@
-# Pinboard Panic — a tiny, very unofficial darts game
+# 🎯 Pinboard Panic
 
-A responsive browser game made with plain HTML, CSS, and JavaScript. It works on GitHub Pages, so **you do not need a backend server**.
+Welcome to **Pinboard Panic**, a ridiculous little darts game where your aim is questionable and the target deserves it.
 
-## Run it locally
-Open `index.html` in a browser. No build tools or dependencies are required.
+## 🎮 How to Play
 
-## Publish with GitHub Pages
-1. Create a public GitHub repository and upload all files in this folder.
-2. In the repository, open **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Select your default branch (usually `main`) and folder **`/ (root)`**, then save.
-5. Wait for GitHub Pages to publish the site. The URL will appear in the Pages settings.
+1. Open the game using the public GitHub Pages link.
+2. Click the **Horizontal Aim** bar to choose your left-to-right aim.
+3. Click the **Vertical Aim** bar to choose your up-and-down aim.
+4. Click **Lock Aim & Throw** to launch your dart. You can also press the **Spacebar**.
+5. Score points based on how close you get to the center of the target.
+6. You have **five darts** per round. Try to beat your score and earn the title of Office Legend!
 
-## Make it your own
-- Replace `assets/target.svg` with your own square image. Keep the filename the same, or update the `src` on the `img#targetImage` element in `index.html`.
-- The game scores distance from the center of the square target: 100, 60, 25, or 5 points.
-- Edit the funny messages and score thresholds in `game.js`.
-- Fonts are loaded from Google Fonts; if unavailable, the page falls back to system fonts.
+## 🏆 Scoring
 
-## Controls
-- Click the horizontal bar to set X.
-- Click the vertical bar to set Y.
-- Press **Lock Aim & Throw**, or press **Space**.
-- Five darts per round. Try again after the result screen.
+- **100 points** — Direct hit!
+- **60 points** — Close enough.
+- **25 points** — Technically nearby.
+- **5 points** — A creative miss.
 
-## Notes
-GitHub Pages serves static files; it does not run a private server-side backend. This game is entirely client-side and does not collect or transmit player data.
+## 🔄 Play Again
+
+Once all five darts have been thrown, your final score and title will appear. Click **Play Again** to start another round.
+
+## 💻 Play Anywhere
+
+The game runs directly in your web browser on desktop and mobile devices. No downloads, accounts, or installations are required.
+
+**Aim carefully. Miss spectacularly. Blame the pinboard.**
+
