@@ -19,3 +19,29 @@
 .track.locked{animation:lock-flash .24s ease-out}
 .throw-button:disabled{cursor:not-allowed;transform:none}
 @media(prefers-reduced-motion:reduce){.dart.in-flight,.dart.stuck,.track.locked{animation:none!important;transition:none!important}}
+.bomb-explosion {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('assets/bomb.svg') no-repeat center center;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0.2);
+    animation: explodeEffect 0.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes explodeEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        filter: brightness(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        filter: brightness(1.8) drop-shadow(0 0 15px orange);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}

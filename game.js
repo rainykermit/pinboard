@@ -1,4 +1,6 @@
 (() => {
+  const explosionSound = new Audio('assets/explosion.mp3');
+  explosionSound.volume = 0.6; // Adjust volume as needed
   const $ = (id) => document.getElementById(id);
   const state = {
     x: 50, y: 50, darts: 5, score: 0, best: null, sound: false,
@@ -17,6 +19,24 @@
   const xTrack = $("xTrack"), yTrack = $("yTrack");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function handleBoardHit(event) {
+    // Play sound effect
+    explosionSound.currentTime = 0;
+    explosionSound.play().catch(e => console.log("Audio autoplay blocked:", e));
+
+    // Create bomb/explosion DOM element at coordinates
+    const explosion = document.createElement('div');
+    explosion.className = 'bomb-explosion';
+    explosion.style.left = `${event.clientX}px`;
+    explosion.style.top = `${event.clientY}px`;
+
+    document.body.appendChild(explosion);
+
+    // Remove after animation completes
+    setTimeout(() => {
+        explosion.remove();
+    }, 500);
+  }
   function updateAim(axis, value, locked = false) {
     value = Math.max(0, Math.min(100, value));
     state[axis] = value;
