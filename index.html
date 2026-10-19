@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151827">
+  <title>Pinboard Panic — Darts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Pinboard Panic home"><span class="brand-mark">✳</span><span>PINBOARD<span class="brand-light"> PANIC</span></span></a>
+    <div class="top-pill"><span class="live-dot"></span> EXTREMELY UNOFFICIAL DARTS</div>
+    <button id="soundBtn" class="icon-button" aria-label="Toggle sound" title="Toggle sound">♫ <span id="soundLabel">Sound off</span></button>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">THE OFFICE OLYMPICS • EVENT 04</p>
+      <h1>Take your shot.<br><span>Miss with confidence.</span></h1>
+      <p class="lede">A tiny game of precision, poor decisions, and one very deserving pinboard.</p>
+      <div class="stats">
+        <div class="stat-card"><span class="stat-label">YOUR SCORE</span><strong id="score">0</strong></div>
+        <div class="stat-card"><span class="stat-label">DARTS LEFT</span><strong id="dartsLeft">5</strong></div>
+        <div class="stat-card"><span class="stat-label">BEST SHOT</span><strong id="best">—</strong></div>
+      </div>
+    </section>
+
+    <section class="game-card" aria-label="Darts game">
+      <div class="game-heading">
+        <div><span class="mini-label">TARGET OF THE DAY</span><h2>The Problem™</h2></div>
+        <span class="round-badge">ROUND <b id="roundNum">01</b></span>
+      </div>
+      <div class="board-frame">
+        <div class="board-shadow"></div>
+        <div class="cork-board">
+          <div class="board-grain"></div>
+          <div class="pin pin-red"></div><div class="pin pin-blue"></div><div class="pin pin-yellow"></div>
+          <div class="target-wrap">
+            <img id="targetImage" src="assets/target.svg" alt="A very punchable cartoon office problem">
+            <div class="scoring-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div id="dart" class="dart hidden" aria-label="Dart landed"><span class="dart-flight"></span><span class="dart-body"></span><span class="dart-tip"></span></div>
+            <div id="aimMarker" class="aim-marker hidden"></div>
+          </div>
+        </div>
+      </div>
+      <div class="feedback" aria-live="polite"><span id="feedbackIcon">✦</span><span id="feedback">Ready to make a questionable decision?</span></div>
+
+      <div class="controls">
+        <div class="control-head"><span class="mini-label">01 / HORIZONTAL AIM</span><span class="control-value" id="xValue">50%</span></div>
+        <div class="track" id="xTrack"><div class="track-fill" id="xFill"></div><div class="track-cursor" id="xCursor"></div></div>
+        <div class="control-head"><span class="mini-label">02 / VERTICAL AIM</span><span class="control-value" id="yValue">50%</span></div>
+        <div class="track" id="yTrack"><div class="track-fill" id="yFill"></div><div class="track-cursor" id="yCursor"></div></div>
+        <button id="throwBtn" class="throw-button"><span>LOCK AIM & THROW</span><span class="button-arrow">↗</span></button>
+        <p class="hint"><span>SPACE</span> throw · <span>CLICK</span> either bar to set aim · bullseye your own destiny</p>
+      </div>
+      <div id="endPanel" class="end-panel hidden">
+        <div class="end-emoji">🏆</div><h2 id="endTitle">Certified Menace</h2><p id="endText">Your HR file has been updated.</p>
+        <button id="restartBtn" class="throw-button"><span>PLAY AGAIN</span><span class="button-arrow">↻</span></button>
+      </div>
+    </section>
+    <aside class="side-panel">
+      <div class="side-card rules-card">
+        <div class="side-icon">🎯</div><h3>How to play</h3>
+        <ol>
+          <li><span>01</span> Click a bar to lock your horizontal aim.</li>
+          <li><span>02</span> Click the other bar to lock your vertical aim.</li>
+          <li><span>03</span> Throw a dart and pray to the office gods.</li>
+        </ol>
+        <p class="tiny-note">You get five darts. No refunds. No appeals.</p>
+      </div>
+      <div class="side-card scoring-card">
+        <div class="side-title"><h3>Scoring</h3><span>PTS</span></div>
+        <div class="score-row"><span class="score-dot gold"></span><span>Direct hit</span><b>100</b></div>
+        <div class="score-row"><span class="score-dot coral"></span><span>Close enough</span><b>60</b></div>
+        <div class="score-row"><span class="score-dot purple"></span><span>Technically nearby</span><b>25</b></div>
+        <div class="score-row"><span class="score-dot grey"></span><span>Creative miss</span><b>5</b></div>
+      </div>
+      <div class="quote-card"><span class="quote-mark">“</span><p id="quip">Aim for greatness. Accidentally hit the printer.</p><span class="quote-by">— THE DARTS DEPARTMENT</span></div>
+    </aside>
+  </main>
+  <footer><span>PINBOARD PANIC © 2026</span><span>MADE WITH QUESTIONABLE INTENTIONS <b>✳</b></span><a href="https://github.com/" target="_blank" rel="noreferrer">BUILT FOR THE INTERNET ↗</a></footer>
+  <script src="game.js"></script>
+</body>
+</html>
